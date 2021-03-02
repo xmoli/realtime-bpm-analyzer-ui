@@ -1,19 +1,13 @@
 import RealTimeBPMAnalyzer from 'realtime-bpm-analyzer'
 import { useState } from 'react'
 
-function createSourceAdress(file){
-
-}
-
 function AudioPlayer(){
     const [Info, setInfo] = useState('')
     const [bpm, setBpm] = useState([].fill({tempo: 0},0, 4))
-    const [file, setFile] = useState()
     
     function handleLoadAudioSource (e){
         let file = e.target.files[0]
         setInfo(e.target.value)
-        setFile(e.target.files[0])
         let audio = document.getElementById('track')
         let src = URL.createObjectURL(file)
         audio.setAttribute("src", src)
@@ -58,8 +52,6 @@ function AudioPlayer(){
         style={{fontSize: '50px', fontWeight:'bold'}}
         >+</label>
     </div>)
-
-    let BpmList = bpm.map((v) => (<span key={v.toString()} >{v}</span>))
 
     return (
         <div>
