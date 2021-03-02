@@ -1,5 +1,4 @@
 import RealTimeBPMAnalyzer from 'realtime-bpm-analyzer'
-import Plotly from 'plotly.js-dist'
 
 import { useState } from 'react'
 
